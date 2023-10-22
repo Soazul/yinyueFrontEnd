@@ -1,5 +1,14 @@
 .App {
   background: #313338;
+  grid-template-rows: 10% 80% 10%;
+}
 
-  
+.header {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.footer {
+  grid-row-start: 3;
+  grid-row-end: 4;
 }

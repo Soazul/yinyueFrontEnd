@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState, useEffect, useCallback} from 'react';
 import './SearchBar.css';
+import {Form} from 'react-bootstrap'
 import {DropdownMenu} from './DropdownMenu';
 
 const CLIENT_ID = 'd15c16ff3a5540d38fd74e93eeced281';
@@ -11,6 +11,7 @@ export function SearchBar(){
     const [accessToken, setAccessToken] = useState('');
     const [searchInput, setSearchInput] = useState('');
     const [songs, setSongs] = useState(null);
+    const [lyrics, setLyrics] = useState('');
 
     useEffect(() => {
         var authParameters = {
@@ -63,10 +64,20 @@ export function SearchBar(){
         }, [searchInput, search]);
 
     return (
-        <div className="input-group">
-            <div className="form-outline">
+    //     <div>
+    //   <Form>
+    //         <Form.Control type='search' placeholder='Search' onKeyPress={handleKeyPress}></Form.Control> 
+    //     </Form>
+    //     {isDropdown && <DropdownMenu songs={songs}/>}
+    //     </div>
+  
+      <div>
+      
+
+            <div className="" style={{marginBottom: '12px'}}>
                 <input type="search" id="form1" className="form-control" placeholder='Search' onKeyPress={handleKeyPress}/>
             </div>
+
             {isDropdown && <DropdownMenu songs={songs}/>}
         </div>    
     );
